@@ -1,0 +1,26 @@
+<div class="main-container">
+  <div class="movie-list-container">
+    <app-movies-gallery [movieList]="fullMovieList"></app-movies-gallery>
+  </div>
+  <div class="favorite-list-container">
+    <div class="register-edit-container">
+      <div class="login">{{ name }}</div>
+      <img
+        *ngIf="name === 'Unregistered'"
+        style="width: 30px; height: 30px;"
+        src="https://img.icons8.com/ios-filled/50/000000/login-rounded-right.png"
+        (click)="open('log')"
+      />
+      <img
+        *ngIf="name !== 'Unregistered'"
+        src="https://img.icons8.com/material-sharp/24/000000/edit.png"
+        style="width: 30px; height: 30px;"
+        (click)="open('edit')"
+      />
+    </div>
+    <app-favorite-list
+      [favouriteList]="favouriteList"
+      (deleteItem)="OnDeleteFromList($event)"
+    ></app-favorite-list>
+  </div>
+</div>

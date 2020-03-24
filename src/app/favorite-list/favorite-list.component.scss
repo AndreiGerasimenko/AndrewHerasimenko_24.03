@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  font-size: 20px;
+  padding: 5px 25px 5px 30px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s ease;
+  z-index: 10;
+
+  &:not(.emptyList)::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url("https://img.icons8.com/metro/26/000000/arrow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &:not(.emptyList):hover {
+    background-color: gray;
+    color: white;
+  }
+
+  .cross {
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+    width: 20px;
+    text-align: center;
+    z-index: 1001;
+
+    &:hover {
+      font-weight: bold;
+      color: rgb(226, 152, 152);
+    }
+  }
+}
+
+ngb-rating {
+  font-size: 40px;
+  color: gold;
+  outline: none;
+  user-select: none;
+}
+
+.favorite-list-container {
+  width: 100%;
+
+  .header {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    .title {
+      margin-left: 10px;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<div class="modal-container">
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="activeModal.close('Close modal')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="inner-container">
+    <div class="left-part">
+      <div class="image-container">
+        <img src="{{ movie.img }}" alt="movie-image" />
+      </div>
+      <div class="rating-container">
+        <ngb-rating
+          [rate]="movie.favorite"
+          [max]="1"
+          [resettable]="false"
+        ></ngb-rating>
+        <div class="movie-year">{{ movie.year }}</div>
+      </div>
+      <div class="left-part-container">
+        <div class="genre" *ngFor="let genre of movie.genres">{{ genre }}</div>
+      </div>
+    </div>
+    <div class="right-part">
+      <h3>{{ movie.name }}</h3>
+      <div class="description">
+        {{ movie.description }}
+      </div>
+      <div class="director">Director: {{ movie.director }}</div>
+      <div class="starring">Starring: {{ movie.starring | outputArray }}</div>
+    </div>
+  </div>
+</div>

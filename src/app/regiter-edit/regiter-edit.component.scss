@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-height: 200px;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: -10px;
+  right: 5px;
+  font-size: 40px;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 7px;
+}

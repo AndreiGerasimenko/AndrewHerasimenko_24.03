@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 230px;
+  height: 380px;
+  padding: 10px 0;
+  background-color: gray;
+  color: white;
+  border-radius: 10px;
+  position: relative;
+  transition: 0.3s ease;
+  cursor: pointer;
+  .image-container {
+    width: 200px;
+    height: 300px;
+    img {
+      width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .film-name {
+    text-align: center;
+    width: 90%;
+  }
+}
+
+.container-view2 {
+  display: flex;
+  padding: 10px 10px;
+  background-color: gray;
+  color: white;
+  border-radius: 10px;
+  position: relative;
+  transition: 0.3s ease;
+  cursor: pointer;
+  .image-container {
+    width: 150px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+  }
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  img {
+    width: 100%;
+    max-height: 200px;
+  }
+
+  .right-part {
+    margin-left: 20px;
+    max-width: 700px;
+  }
+
+  .film-name {
+    display: inline-block;
+    width: 500px;
+  }
+
+  .film-year {
+    display: inline-block;
+  }
+
+  .description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 20px 0;
+  }
+
+  .genres-container {
+    display: flex;
+    margin-top: 50px;
+
+    .genre {
+      margin-right: 20px;
+      border: 1px solid black;
+      width: 100px;
+      text-align: center;
+      padding: 7px;
+      background-color: white;
+      color: black;
+      border-radius: 5px;
+    }
+  }
+}
+
+ngb-rating {
+  font-size: 40px;
+  color: gold;
+  outline: none;
+  user-select: none;
+  position: absolute;
+  top: -15px;
+  right: 0;
+}

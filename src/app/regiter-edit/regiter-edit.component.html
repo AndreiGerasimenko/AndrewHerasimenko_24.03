@@ -1,0 +1,25 @@
+<div class="main-container" [formGroup]="formGroup">
+  <label class="name"
+    >Name:
+    <input type="text" placeholder="Input the name" formControlName="name"
+  /></label>
+  <label class="email"
+    >Email:
+    <input type="email" placeholder="Input the email" formControlName="email"
+  /></label>
+  <button type="button" class="close" (click)="activeModal.close('')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <button
+    class="done-button"
+    [disabled]="formGroup.invalid"
+    (click)="
+      activeModal.close({
+        name: formGroup.controls['name'].value,
+        email: formGroup.controls['email'].value
+      })
+    "
+  >
+    Done
+  </button>
+</div>

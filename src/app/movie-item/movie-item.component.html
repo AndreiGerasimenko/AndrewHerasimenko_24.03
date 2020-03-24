@@ -1,0 +1,39 @@
+<div class="container" *ngIf="movieObj && viewType === 'grid'" (click)="open()">
+  <div class="image-container">
+    <img src="{{ movieObj.img }}" alt="movie-image" />
+  </div>
+  <div class="film-name">{{ movieObj.name }}</div>
+  <div class="film-year">{{ movieObj.year }}</div>
+  <ngb-rating
+    [rate]="movieObj.favorite"
+    [max]="1"
+    [resettable]="true"
+    (rateChange)="onRatingChange($event)"
+    (click)="onRatingClick($event)"
+  ></ngb-rating>
+</div>
+
+<div
+  class="container-view2"
+  *ngIf="movieObj && viewType === 'rows'"
+  (click)="open()"
+>
+  <div class="image-container">
+    <img src="{{ movieObj.img }}" alt="movie-image" />
+  </div>
+  <div class="right-part">
+    <div class="film-name">{{ movieObj.name }}</div>
+    <div class="film-year">{{ movieObj.year }}</div>
+    <div class="description">{{ movieObj.description }}</div>
+    <div class="genres-container">
+      <div class="genre" *ngFor="let genre of movieObj.genres">{{ genre }}</div>
+    </div>
+  </div>
+  <ngb-rating
+    [rate]="movieObj.favorite"
+    [max]="1"
+    [resettable]="true"
+    (rateChange)="onRatingChange($event)"
+    (click)="onRatingClick($event)"
+  ></ngb-rating>
+</div>

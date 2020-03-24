@@ -1,0 +1,16 @@
+<div class="favorite-list-container">
+  <div class="header">
+    <ngb-rating [rate]="1" [max]="1" [resettable]="false"></ngb-rating>
+    <h3 class="title">Favorite List</h3>
+  </div>
+  <ul class="list-container">
+    <li *ngFor="let item of favouriteList" (click)="open(item.id)">
+      <span>{{ item.name }}</span>
+      <div class="cross" (click)="onCrossClick($event, item.id)">X</div>
+    </li>
+
+    <li class="emptyList" *ngIf="!favouriteList.length">
+      The favorite list is empty
+    </li>
+  </ul>
+</div>
